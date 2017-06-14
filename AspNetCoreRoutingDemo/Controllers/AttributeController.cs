@@ -15,14 +15,14 @@ namespace AspNetCoreRoutingDemo.Controllers
             return View();
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         public IActionResult ByID(int id)
         {
             ViewData["userID"] = id;
             return View();
         }
 
-        [HttpGet("{dateOfBirth}/all")]
+        [HttpGet("{dateOfBirth:datetime}")]
         public IActionResult ByDateOfBirth(DateTime dateOfBirth)
         {
             ViewData["dateOfBirth"] = dateOfBirth;
@@ -35,7 +35,7 @@ namespace AspNetCoreRoutingDemo.Controllers
             return RedirectToAction("ByDateOfBirth", new { dateOfBirth = dateOfBirth.ToString("yyyy-MM-dd") });
         }
 
-        [HttpPost("search/byID/")]
+        [HttpPost("search/byID")]
         public IActionResult SearchByID(int id)
         {
             return RedirectToAction("ByID", new { id = id });
