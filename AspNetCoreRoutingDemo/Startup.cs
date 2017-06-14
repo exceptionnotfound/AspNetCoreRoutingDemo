@@ -60,7 +60,7 @@ namespace AspNetCoreRoutingDemo
                 routes.MapRoute(
                     name: "allBlogs",
                     template: "convention/{action}/{blogID:int?}",
-                    defaults: new { controller = "Convention", action = "AllBlogs" }
+                    defaults: new { controller = "Convention", action = "AllBlogsAndIndex" }
                     );
 
                 routes.MapRoute(

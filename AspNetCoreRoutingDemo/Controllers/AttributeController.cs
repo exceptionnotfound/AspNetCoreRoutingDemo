@@ -9,7 +9,7 @@ namespace AspNetCoreRoutingDemo.Controllers
     [Route("users")]
     public class AttributeController : Controller
     {
-        [Route("index")]
+        [HttpGet("index")] //We generally want to use the more specific Http[Verb] attributes over the generic Route attribute
         public IActionResult Index()
         {
             return View();
