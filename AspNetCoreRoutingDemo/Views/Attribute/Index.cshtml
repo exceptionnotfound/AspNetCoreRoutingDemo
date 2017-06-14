@@ -6,3 +6,23 @@
 <h2>Index</h2>
 
 <p>On this page, we can search for users by ID or date of birth.</p>
+
+<form asp-action="searchbydateofbirth" asp-controller="attribute" method="post">
+    <h3>Search by Date of Birth</h3>
+    <label>
+        Date of Birth:
+        <input type="date" id="dateOfBirth" name="dateOfBirth" value="@DateTime.Today.ToString("yyyy-MM-dd")" />
+    </label>
+    <br />
+    <input type="submit" value="Search" />
+</form>
+
+<form asp-action="searchbyid" asp-controller="attribute" method="post">
+    <h3>Search by ID</h3>
+    <label>
+        ID:
+        <input type="text" id="id" name="id" />
+    </label>
+    <br />
+    <input type="submit" value="Search" />
+</form>
