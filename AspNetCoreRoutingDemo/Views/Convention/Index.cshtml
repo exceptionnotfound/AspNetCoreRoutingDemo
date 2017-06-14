@@ -1,0 +1,26 @@
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Post List for Blog #@ViewData["blogID"]</h2>
+
+<p>This is the index for Blog #@ViewData["blogID"].  On this page, you might see a list of all blog posts, or maybe just the most recent one.</p>
+
+<p>We got to this page using one of the convention routes defined in the Startup.cs file.</p>
+
+<p>We also use convention routes to get to the posts in this blog, such as the following:</p>
+
+@{ 
+    var random = new Random();
+}
+
+<ul>
+    @for (int i = 0; i < 3; i++)
+    {
+        var postNumber = random.Next(200);
+        <li>
+            @Html.ActionLink("Blog Post #" + postNumber.ToString(), "blogpost", new { blogID = ViewData["blogID"], postID = postNumber })
+        </li>
+    }
+</ul>

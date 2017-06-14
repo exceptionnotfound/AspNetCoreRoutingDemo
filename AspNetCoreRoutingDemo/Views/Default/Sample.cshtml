@@ -1,0 +1,19 @@
+
+@{
+    ViewData["Title"] = "Sample";
+}
+
+<h2>Sample (ID: @ViewData["id"])</h2>
+
+@{
+    var random = new Random();
+    var nextPage = random.Next(20);
+}
+
+<p>
+    Here's the Sample view.  
+    Notice how just navigating to @Html.ActionLink("/default/sample/" + nextPage.ToString(), "sample", new { id = nextPage }) also works?
+</p>
+<p>
+    Refresh the page to see more pages.
+</p>
