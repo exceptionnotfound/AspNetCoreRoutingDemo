@@ -25,6 +25,7 @@
   <ItemGroup>
     <Folder Include="Views\Default\" />
     <Folder Include="Views\Convention\" />
+    <Folder Include="Views\Attribute\" />
   </ItemGroup>
 
 </Project>
