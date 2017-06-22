@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Mvc;
 namespace AspNetCoreRoutingDemo.Controllers
 {
     [Route("users")]
+    [Route("[controller]")]
     public class AttributeController : Controller
     {
+        [HttpGet("")]
         [HttpGet("index")] //We generally want to use the more specific Http[Verb] attributes over the generic Route attribute
+        
         public IActionResult Index()
         {
             return View();

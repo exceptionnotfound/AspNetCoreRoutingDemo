@@ -49,24 +49,24 @@ namespace AspNetCoreRoutingDemo
 
             app.UseStaticFiles();
 
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "blogPosts",
-                    template: "convention/{action}/{blogID:int}/{postID:int}",
-                    defaults: new { controller = "Convention", action = "BlogPost" }
-                    );
+    app.UseMvc(routes =>
+    {
+        routes.MapRoute(
+            name: "blogPosts",
+            template: "convention/{action}/{blogID:int}/{postID:int}",
+            defaults: new { controller = "Convention", action = "BlogPost" }
+            );
 
-                routes.MapRoute(
-                    name: "allBlogs",
-                    template: "convention/{action}/{blogID:int?}",
-                    defaults: new { controller = "Convention", action = "AllBlogsAndIndex" }
-                    );
+        routes.MapRoute(
+            name: "allBlogs",
+            template: "convention/{action}/{blogID:int?}",
+            defaults: new { controller = "Convention", action = "AllBlogsAndIndex" }
+            );
 
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id:int?}");
-            });
+        routes.MapRoute(
+            name: "default",
+            template: "{controller=Home}/{action=Index}/{id:int?}");
+    });
         }
     }
 }
